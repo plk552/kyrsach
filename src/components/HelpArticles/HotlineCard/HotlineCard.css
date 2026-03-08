@@ -1,0 +1,135 @@
+/* src/components/HelpArticles/HotlineCard/HotlineCard.css */
+.hotline-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 2rem;
+  background: rgba(18, 18, 22, 0.6);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: none;
+  font-family: var(--font-body);
+}
+
+.hotline-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: rgba(100, 108, 255, 0.2);
+  color: #a5abff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotline-icon svg {
+  width: 38px;
+  height: 38px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.hotline-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.hotline-text-group {
+  margin: 0;
+}
+
+.hotline-title + .hotline-subtitle {
+  margin-top: 0.35rem;
+}
+
+.hotline-subtitle + .hotline-number,
+.hotline-text-group + .hotline-number {
+  margin-top: 0.35rem;
+}
+
+.hotline-title,
+.hotline-subtitle,
+.hotline-number {
+  margin: 0;
+  text-align: center;
+}
+
+.hotline-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.3;
+}
+
+.hotline-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.45;
+}
+
+.hotline-number {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #a5abff;
+  text-decoration: none;
+}
+
+.hotline-number:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .hotline-card {
+    padding: 1.25rem 1rem;
+    gap: 1rem;
+  }
+
+  .hotline-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .hotline-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .hotline-title {
+    font-size: 1.2rem;
+  }
+
+  .hotline-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .hotline-card {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .hotline-icon {
+    background: rgba(100, 108, 255, 0.12);
+    color: #5058c9;
+  }
+
+  .hotline-title {
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .hotline-subtitle {
+    color: rgba(0, 0, 0, 0.55);
+  }
+
+  .hotline-number {
+    color: #5058c9;
+  }
+}

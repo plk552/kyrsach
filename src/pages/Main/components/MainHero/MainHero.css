@@ -1,0 +1,145 @@
+/* src/pages/Main/components/MainHero/MainHero.css */
+.main-hero {
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.main-subtitle {
+  margin-top: 0.75rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-input-wrapper {
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.25rem 0.5rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.main-search-results {
+  margin-top: var(--main-block-gap, 2.5rem);
+}
+
+.main-search-results .main-section-title {
+  margin-bottom: 0.75rem;
+}
+
+.main-search-empty {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.main-search-hint {
+  margin: 0 0 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.main-ai-btn {
+  margin-bottom: 0.75rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.main-ai-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(100, 108, 255, 0.4);
+}
+
+.main-ai-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.main-search-error {
+  margin: 0 0 0.5rem;
+  color: #ff9999;
+  font-size: 0.9rem;
+}
+
+.main-search-loading {
+  padding: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .main-hero {
+    padding: 0 0.25rem;
+  }
+
+  .main-input-wrapper {
+    max-width: 100%;
+    padding: 0 0.25rem;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-hero {
+    padding: 0;
+  }
+
+  .main-input-wrapper {
+    padding: 0;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+  }
+
+  .main-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-title {
+    font-size: 1.4rem;
+  }
+
+  .main-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .main-search-empty {
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .main-search-hint {
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .main-search-error {
+    color: #c44;
+  }
+
+  .main-search-loading {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}

@@ -1,0 +1,56 @@
+/* src/pages/Main/components/MainSavedSection/MainSavedSection.css */
+.main-empty {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.main-saved-link-wrap {
+  margin: 1.25rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.main-saved-link {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.main-saved-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (prefers-color-scheme: light) {
+  .main-saved-link-wrap {
+    border-top-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .main-saved-link {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .main-saved-link:hover {
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+.main-preset-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .main-preset-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main-preset-grid {
+    grid-template-columns: 1fr;
+  }
+}

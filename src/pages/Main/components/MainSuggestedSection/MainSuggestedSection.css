@@ -1,0 +1,67 @@
+/* src/pages/Main/components/MainSuggestedSection/MainSuggestedSection.css */
+.main-purpose-grid--ai {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-purpose-grid--ai .main-purpose-card {
+  flex: 0 1 280px;
+  min-width: 200px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  min-height: 0;
+}
+
+.main-purpose-grid--ai .main-purpose-label {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 0.35rem;
+}
+
+.main-purpose-grid--ai .main-purpose-description {
+  flex: 1 1 auto;
+  margin-top: 0;
+  text-align: left;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 992px) {
+  .main-purpose-grid--ai .main-purpose-card {
+    flex: 0 1 220px;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-purpose-grid--ai {
+    gap: 0.75rem;
+  }
+
+  .main-purpose-grid--ai .main-purpose-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-purpose-grid--ai .main-purpose-card {
+    min-width: 0;
+  }
+}

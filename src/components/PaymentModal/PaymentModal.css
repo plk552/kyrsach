@@ -1,0 +1,375 @@
+/* src/components/PaymentModal/PaymentModal.css */
+.payment-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.payment-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow: auto;
+  background: rgba(10, 10, 12, 0.98);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(100, 108, 255, 0.15);
+}
+
+.payment-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.payment-modal-close:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.payment-modal-help {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: help;
+  z-index: 1;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.payment-modal-help:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.payment-modal-help-tooltip {
+  position: absolute;
+  top: 3.5rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(20, 20, 26, 0.98);
+  border: 1px solid rgba(100, 108, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.payment-modal:has(.payment-modal-help:hover) .payment-modal-help-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.payment-modal-content {
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.payment-modal-title {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.payment-modal-tariff-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.payment-modal-tariff-name {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.payment-modal-tariff-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #a5abff;
+}
+
+.payment-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.payment-modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.payment-modal-label--half {
+  flex: 1;
+  min-width: 0;
+}
+
+.payment-modal-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.payment-modal-input,
+.payment-modal-textarea {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.payment-modal-input::placeholder,
+.payment-modal-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.payment-modal-input:focus,
+.payment-modal-textarea:focus {
+  outline: none;
+  border-color: rgba(100, 108, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.payment-modal-input--error {
+  border-color: rgba(255, 120, 100, 0.6);
+  background: rgba(255, 100, 80, 0.06);
+}
+
+.payment-modal-input--error:focus {
+  border-color: rgba(255, 100, 80, 0.8);
+}
+
+.payment-modal-hint {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #ff9999;
+  margin-top: 0.2rem;
+}
+
+.payment-modal-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #b0b4ff;
+  display: block;
+  padding: 0.5rem 0.85rem;
+  background: rgba(100, 108, 255, 0.12);
+  border-radius: 10px;
+  border: 1px solid rgba(100, 108, 255, 0.25);
+  text-align: center;
+}
+
+.payment-modal-total-wrap {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.payment-modal-textarea {
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.payment-modal-submit {
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 12px;
+  background: #646cff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.payment-modal-submit:hover {
+  background: #535bf2;
+}
+
+@media (max-width: 480px) {
+  .payment-modal-backdrop {
+    padding: 0.5rem;
+    align-items: flex-end;
+  }
+
+  .payment-modal {
+    max-height: 88vh;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .payment-modal-content {
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+
+  .payment-modal-title {
+    font-size: 1.25rem;
+  }
+
+  .payment-modal-label {
+    font-size: 1rem;
+  }
+
+  .payment-modal-close,
+  .payment-modal-help {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    top: 0.5rem;
+  }
+
+  .payment-modal-close {
+    right: 0.5rem;
+  }
+
+  .payment-modal-help {
+    left: 0.5rem;
+  }
+}
+
+@media (max-height: 500px) {
+  .payment-modal {
+    max-height: 95vh;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .payment-modal {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .payment-modal-close {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .payment-modal-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.4);
+    color: #000;
+  }
+
+  .payment-modal-help {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .payment-modal-help:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.4);
+    color: #000;
+  }
+
+  .payment-modal-help-tooltip {
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(100, 108, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .payment-modal-tariff-info {
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .payment-modal-tariff-name {
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  .payment-modal-tariff-price {
+    color: #5058c9;
+  }
+
+  .payment-modal-label {
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  .payment-modal-input,
+  .payment-modal-textarea {
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.12);
+  }
+
+  .payment-modal-input::placeholder,
+  .payment-modal-textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .payment-modal-input:focus,
+  .payment-modal-textarea:focus {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(100, 108, 255, 0.4);
+  }
+
+  .payment-modal-input--error {
+    border-color: rgba(200, 80, 60, 0.5);
+    background: rgba(200, 80, 60, 0.06);
+  }
+
+  .payment-modal-hint {
+    color: #c94d4d;
+  }
+
+  .payment-modal-total {
+    color: #5058c9;
+    background: rgba(100, 108, 255, 0.08);
+    border-color: rgba(100, 108, 255, 0.2);
+  }
+}

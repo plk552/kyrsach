@@ -1,0 +1,456 @@
+/* src/pages/Сonstructor/components/ConstructorEquipmentSection/ConstructorEquipmentSection.css */
+.constructor-equipment-section {
+  min-width: 0;
+  position: relative;
+  background: rgba(10, 10, 12, 0.95);
+  border-radius: 24px;
+  border: 1px solid #2a2a2a;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.constructor-section-header {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.constructor-section-header-text {
+  min-width: 0;
+  text-align: center;
+}
+
+.constructor-section-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.constructor-section-help {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: help;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.constructor-section-help:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.constructor-section-help-tooltip {
+  position: absolute;
+  top: 3.5rem;
+  left: 50%;
+  width: 85%;
+  max-width: 320px;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(165deg, rgba(22, 22, 28, 0.98) 0%, rgba(14, 14, 20, 0.98) 100%);
+  border: 1px solid rgba(100, 108, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06),
+              0 8px 24px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.constructor-equipment-section:has(.constructor-section-help:hover) .constructor-section-help-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.constructor-filters {
+  margin-bottom: 1rem;
+}
+
+.constructor-filters-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.constructor-filter-btn {
+  padding: 0.85rem 1.6rem;
+  font-size: 1.1rem;
+  font-family: inherit;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.constructor-filter-btn:focus,
+.constructor-filter-btn:focus-visible,
+.constructor-filter-btn:active {
+  outline: none;
+}
+
+.constructor-filter-btn:hover {
+  border-color: rgba(100, 108, 255, 0.5);
+  background: rgba(100, 108, 255, 0.1);
+}
+
+.constructor-filter-btn--active {
+  border-color: #646cff;
+  background: rgba(100, 108, 255, 0.2);
+}
+
+.constructor-equipment-search {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+
+.constructor-equipment-search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: 12px;
+  border: 2px solid rgba(100, 108, 255, 0.4);
+  background: linear-gradient(160deg, rgba(18, 18, 22, 0.98) 0%, rgba(10, 10, 14, 0.98) 100%);
+  color: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(100, 108, 255, 0.12),
+              inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.constructor-equipment-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.constructor-equipment-search-input:hover {
+  border-color: rgba(100, 108, 255, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35),
+              0 0 0 1px rgba(100, 108, 255, 0.18),
+              inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.constructor-equipment-search-input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.25),
+              0 6px 20px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.constructor-equipment-search-submit {
+  flex-shrink: 0;
+  width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  color: #fff;
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  border: 2px solid rgba(100, 108, 255, 0.5);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  align-self: stretch;
+}
+
+.constructor-equipment-search-submit:hover {
+  background: linear-gradient(135deg, #6f76ff 0%, #5c64f5 100%);
+  box-shadow: 0 4px 16px rgba(100, 108, 255, 0.35);
+}
+
+.constructor-equipment-grid {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.constructor-grid-item {
+  min-width: 0;
+  display: flex;
+}
+
+.constructor-card {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(18, 18, 22, 0.98) 0%, rgba(10, 10, 14, 0.98) 100%);
+  transition: border-color 0.25s, box-shadow 0.25s;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45),
+              0 16px 48px rgba(0, 0, 0, 0.35),
+              0 24px 64px rgba(0, 0, 0, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.constructor-card:hover {
+  border-color: rgba(100, 108, 255, 0.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5),
+              0 24px 56px rgba(0, 0, 0, 0.4),
+              0 32px 72px rgba(0, 0, 0, 0.3),
+              0 0 0 1px rgba(100, 108, 255, 0.2),
+              0 12px 32px rgba(100, 108, 255, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.constructor-card--selected {
+  border-color: rgba(100, 108, 255, 0.5);
+  background: linear-gradient(160deg, rgba(100, 108, 255, 0.15) 0%, rgba(12, 12, 18, 0.98) 100%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5),
+              0 18px 44px rgba(0, 0, 0, 0.4),
+              0 28px 64px rgba(0, 0, 0, 0.3),
+              0 8px 24px rgba(100, 108, 255, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.constructor-card-image {
+  width: 100%;
+  height: 100px;
+  background: #1e1e1e;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.constructor-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.constructor-card-image--placeholder {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.constructor-card-body {
+  padding: 1.2rem 1.15rem;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: center;
+  text-align: center;
+}
+
+.constructor-card-top {
+  flex: 1;
+  min-height: 4.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.constructor-card-name {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+
+.constructor-card-category {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.4;
+  width: 100%;
+}
+
+.constructor-card-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #c4b5fd;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(196, 181, 253, 0.25);
+  min-width: 5.5em;
+}
+
+.constructor-card-description-btn {
+  margin-top: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 108, 255, 0.5);
+  background: rgba(100, 108, 255, 0.15);
+  color: #a5abff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.constructor-card-description-btn:hover {
+  background: rgba(100, 108, 255, 0.25);
+  border-color: #646cff;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .constructor-equipment-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .constructor-equipment-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .constructor-equipment-section {
+    padding: 1.4rem 1.1rem;
+  }
+
+  .constructor-equipment-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .constructor-card-image {
+    height: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  .constructor-equipment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .constructor-equipment-section {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  .constructor-section-help {
+    border-color: rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .constructor-section-help:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .constructor-section-help-tooltip {
+    color: rgba(0, 0, 0, 0.92);
+    background: linear-gradient(165deg, rgba(252, 252, 255, 0.98) 0%, rgba(245, 246, 252, 0.98) 100%);
+    border-color: rgba(100, 108, 255, 0.25);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9),
+                0 8px 24px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
+
+  .constructor-equipment-search-input {
+    background: linear-gradient(160deg, #ffffff 0%, #f4f5f9 100%);
+    border-color: rgba(100, 108, 255, 0.35);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(100, 108, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .constructor-equipment-search-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .constructor-equipment-search-input:focus {
+    border-color: #646cff;
+    box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2),
+                0 6px 20px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  }
+
+  .constructor-card {
+    background: linear-gradient(160deg, #ffffff 0%, #f4f5f9 100%);
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  .constructor-card:hover {
+    border-color: rgba(100, 108, 255, 0.4);
+  }
+
+  .constructor-card--selected {
+    border-color: rgba(100, 108, 255, 0.5);
+    background: linear-gradient(160deg, rgba(100, 108, 255, 0.12) 0%, #f0f2ff 100%);
+  }
+
+  .constructor-card-name {
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .constructor-card-category {
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .constructor-card-price {
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.15);
+  }
+
+  .constructor-card-description-btn {
+    border-color: rgba(100, 108, 255, 0.4);
+    background: rgba(100, 108, 255, 0.1);
+    color: #5058c9;
+  }
+
+  .constructor-card-description-btn:hover {
+    background: rgba(100, 108, 255, 0.2);
+    border-color: #646cff;
+    color: #213547;
+  }
+}

@@ -1,0 +1,249 @@
+/* src/components/Header/Header.css */
+.header {
+  position: fixed;
+  top: max(30px, env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1452px;
+  min-width: 0;
+  height: 80px;
+  background: rgba(8, 8, 10, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.logo-link:hover {
+  color: #646cff;
+}
+
+.logo-svg {
+  width: 210px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.navbar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 0.55rem 1rem;
+  border-radius: 14px;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+}
+
+.navbar a.active {
+  color: #fff;
+  background: rgba(100, 108, 255, 0.25);
+  border-color: rgba(100, 108, 255, 0.4);
+  box-shadow: 0 0 0 1px rgba(100, 108, 255, 0.2);
+}
+
+.nav-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.navbar a svg {
+  width: 28px;
+  height: 28px;
+  color: currentColor;
+  stroke: currentColor;
+  transition: color 0.2s;
+}
+
+.navbar a:not(.active):hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 0 1rem;
+    width: 96%;
+    border-radius: 20px;
+  }
+
+  .nav-text {
+    font-size: 0.9rem;
+  }
+
+  .navbar a svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .navbar {
+    gap: 0.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 0 0.75rem;
+    height: 70px;
+    top: 20px;
+    border-radius: 18px;
+  }
+
+  .logo-svg {
+    width: 160px;
+    height: 38px;
+  }
+
+  .nav-text {
+    font-size: 0.85rem;
+  }
+
+  .navbar a svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .navbar a {
+    padding: 0.5rem 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 0.5rem;
+    height: 64px;
+    top: 16px;
+    border-radius: 16px;
+    width: calc(100% - 1rem);
+  }
+
+  .logo-svg {
+    width: 130px;
+    height: 31px;
+  }
+
+  .nav-text {
+    display: none;
+  }
+
+  .navbar a {
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .navbar a svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 0.4rem;
+    height: 56px;
+    top: 12px;
+    border-radius: 14px;
+    width: calc(100% - 0.75rem);
+  }
+
+  .logo-svg {
+    width: 100px;
+    height: 24px;
+  }
+
+  .navbar a {
+    padding: 0.4rem;
+  }
+
+  .navbar a svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    padding: 0 0.25rem;
+    height: 52px;
+    border-radius: 12px;
+    width: calc(100% - 0.5rem);
+  }
+
+  .logo-svg {
+    width: 80px;
+    height: 19px;
+  }
+
+  .navbar a {
+    padding: 0.35rem;
+  }
+
+  .navbar a svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .header {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .logo-link {
+    color: #1a1a1a;
+  }
+
+  .logo-link:hover {
+    color: #646cff;
+  }
+
+  .navbar a {
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  .navbar a.active {
+    color: #1a1a1a;
+    background: rgba(100, 108, 255, 0.12);
+    border-color: rgba(100, 108, 255, 0.25);
+  }
+
+  .navbar a:not(.active):hover {
+    color: #1a1a1a;
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.content {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 120px;
+}

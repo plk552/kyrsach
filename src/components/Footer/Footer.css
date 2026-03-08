@@ -1,0 +1,156 @@
+/* src/components/Footer/Footer.css */
+.footer {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: auto;
+  flex: 1;
+  min-height: 180px;
+  padding: 1rem 1rem 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 8, 10, 0.97);
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+}
+
+.footer-logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+}
+
+.footer-text + .footer-text {
+  margin-top: 0.3rem;
+}
+
+.footer-text-small {
+  font-size: 0.85rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.65);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-bottom a {
+  color: inherit;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 0.75rem 0.5rem 1.25rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0.5rem 0.5rem 1rem;
+  }
+
+  .footer-inner {
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    font-size: 1.15rem;
+  }
+
+  .footer-text,
+  .footer-nav {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+    padding-top: 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding: 0.4rem 0.4rem 0.75rem;
+  }
+
+  .footer-bottom-links {
+    gap: 0.5rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-top-color: rgba(0, 0, 0, 0.06);
+  }
+
+  .footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.65);
+  }
+}
+
